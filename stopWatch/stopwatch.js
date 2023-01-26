@@ -7,7 +7,8 @@ window.addEventListener('load', ()=>{
      let seconds = 0;
      let minutes = 0;
      let hours = 0;
-
+        let arr = [];
+        console.log(arr)
      let leadingSeconds = 0;
      let leadingMinutes = 0;
      let leadingHours = 0;
@@ -38,8 +39,11 @@ window.addEventListener('load', ()=>{
         else {
             leadingMinutes = minutes;
         }
-        if ( hours < 24){
+        if ( hours < 10){
             leadingHours = '0' + hours
+        }
+        else{
+            leadingHours = hours;
         }
 
               let timer = document.querySelector('.timer').innerText = leadingHours + ':' + leadingMinutes + ':' + leadingSeconds;
@@ -55,26 +59,48 @@ window.addEventListener('load', ()=>{
                 document.querySelector('.play').classList.add('pause');
                 document.querySelector('.play').innerHTML= 'PAUSE'
                 timerStatus= 'stop'
+                arr.shift(seconds)
+                arr.shift(minutes)
+                arr.shift(hours)
+                console.log(arr)
             }
             else{
                 timerInterval= window.clearInterval(timerInterval);
                 document.querySelector('.play').classList.remove('pause');
                 document.querySelector('.play').innerHTML = "PLAY";
                 timerStatus= 'start';
-                
+                arr.unshift(seconds)
+                arr.unshift(minutes)
+                arr.unshift(hours)
+                console.log(arr)
+                localStorage.setItem('savedTime',JSON.stringify(arr))
             }
         })
+      
+        console.log(timerInterval)
         reset.addEventListener('click', ()=>{
-            timerInterval= window.clearInterval(timerInterval);
-            seconds=0;
-            minutes=0;
-            hours=0;
-
-            document.querySelector('.timer').innerText= "00:00:00";
-            document.querySelector('.play').classList.remove('pause');
-            document.querySelector('.play').innerHTML = "PLAY";
-
+    
+            if (timerStatus === 'start')    {
+                timerInterval= window.clearInterval(timerInterval);
+                seconds=0;
+                minutes=0;
+                hours=0;
+    
+                document.querySelector('.timer').innerText= "00:00:00";
+                document.querySelector('.play').classList.remove('pause');
+                document.querySelector('.play').innerHTML = "PLAY";                      
+            }
+            else{
+                alert ('press pause first bros')
+            }
         })  
+
+        let getSave = JSON.parse(localStorage.getItem('savedTime'));
+        console.log(getSave)
+        
+        timer = document.querySelector('.timer').innerText = `${getSave[0]} : ${getSave[1]} : ${getSave[2]}`
+        
+
 
 
 
