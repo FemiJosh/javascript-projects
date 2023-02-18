@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy - Nite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo-container">
+            <h1>
+                Lazy <span> house </span>
+            </h1>
+        </div>
+        <div class= 'nav-links-container'>
+            <ul class="nav-links">
+              <li> Home </li>
+              <li> Schedule</li>
+              <li> Movies</li>
+              <li> News </li>
+              <li>
+                 <button class="btns login-btn" onclick="pageDisplay(loginPage)"> log in</button>
+            </li>
+            <li>
+                <button class="btns signup-btn" onclick="pageDisplay(registerPage)"> sign in</button>
+            </li>
+            </ul>
+        </div>
+       
+        <img src="./icons/hamburger-solid.svg" class="burger socials" onclick="displayLinks()">
+
+    </nav>
+
+    <article class="header-details">
+        <div class="right-content">
+            <div class="header-book">
+                <button class="btns">book now</button>
+                <p class="right-content-date">
+                    January 29, 2002
+                    <span>IMAX 3D</span>
+                </p>
+            </div>
+            
+            <div class="header-socials">
+                <img src="./icons/facebook.svg" class="socials">
+                <img src="./icons/twitter.svg" class="socials">
+                <img src="./icons/instagram.svg" class="socials">
+            </div>
+        </div>
+
+        <div class="left-content">
+            <div class="watch-trailer">
+                <img src="./icons/play-circle-solid.svg" class="play-btn">
+                <span class="watch"> watch trailers</span>
+            </div>
+            <div class="scroll-numbers">
+                <span class="direction left"> <img src="./icons/arrow-left-solid.svg" class="left-arrow socials"></span>
+                <span class="number"> 01 </span>
+                <span class="number"> 02</span>
+                <span class="number">03</span>
+                <span class="number">04</span>
+                <span class="number">05</span>
+                <span class="direction right"> <img src="./icons/arrow-right-solid.svg" class="right-arrow socials"></span>
+            </div>
+            
+        </div>
+   
+    </article>
+    <div class="blur-container"> </div>
+    
+    <section class="login-and-register login-page">
+        <div class="loginCont">
+            <div class="head">
+                <h4>
+                    Log in to your account
+                    <p>Don't have an account? <a href="./registerpage.html">Sign Up</a></p>
+                </h4>
+                <img src="./icons/times-solid.svg" class="socials cancelBtn" onclick="removePage(loginCont[0])">
+                <button class= "btns" > <img src="./icons/google.svg" class="socials"> Sign in with google</button>
+            </div>
+             <form>
+                <div class="email-form">
+                    <h3> Email Address</h3>
+                <input type="email" class="register-input">
+                </div>
+                <div class="password-form">
+                    <h3>Password</h3>
+                    <input type="password" class="register-input">
+                   </div>
+                
+                   <input type="submit" value="Log In" class="btns form-submit-btn">
+            </form>
+    
+            <div class="bottom">
+                <a href="#"> Forgot Password ? </a>
+            </div>
+        </div>
+    </section>
+    <section class="login-and-register register-page">
+
+        <div class="loginCont">
+            <img src="./icons/times-solid.svg" class="socials cancelBtn" onclick="removePage(loginCont[1])">
+            <div class=".head">
+                    <h4>
+                         Create an Account
+                         <p>Have an account? <a href="../pages/loginpage.html">Log In</a></p>
+                  </h4>
+            </div>
+        <form>
+            <div class="firstname-lastname">
+                <div class="firstname-form">
+                    <h3> First Name</h3>
+                    <input type="text" class="register-first-name">
+                </div>
+                <div class="lastname-form">
+                    <h3> Last Name</h3>
+                    <input type="text" class="register-last-name">
+                </div>
+            </div>
+            <div class="email-form">
+                <h3> E-mail Address</h3>
+            <input type="email" class="register-input">
+            </div>
+            <div class="phonenumber-form">
+                <h3> Phone Number</h3>
+                <input type="number" class="register-input">
+            </div>
+           <div class="password-form">
+            <h3> Set Password</h3>
+            <input type="password" class="register-input">
+           </div>
+           <input type="submit" value="Register Account" class="btns form-submit-btn">
+        </form>
+        </div>
+ 
+    </section>
+
+
+</header>
+
+
+<section class="opening movie-section">
+    <div class="section-header">
+        <h2> opening this week</h2>
+        <input type="text" placeholder="Search" class="search-input">
+    </div>
+    <div class="lines"> </div>
+    <div class="menu-btns">
+    </div>
+
+    <div class="movie-box-container">
+        <!-- JAVASCRIPT CONTROLLED -->
+    </div>
+        <button class="morebtn btns">
+            More..
+        </button>
+
+        <div class="remainder-container login-and-register">
+            <div class="remainder-box">
+                <img src="./icons/bell-solid.svg" class="remainder-bell">
+                <img src="./icons/times-solid.svg" class="socials cancelBtn" onclick="removePage(remainderCont)">
+                <form class="remainder-selects">
+                    <!-- <select>
+                        <option value="Days" selected hidden>Date</option>                   
+                    </select> -->
+                    <select>
+                        <option value="Hour" selected hidden>Hour</option>                    
+                    </select>
+                    <select>
+                        <option value="Minutes" selected hidden>Minutes</option>                    
+                    </select>
+                    <select>
+                        <option value="AM/PM" selected hidden>AM/PM</option>                    
+                    </select>
+        
+                    <input type="submit" value="Set Remainder" class="btns main-remainder-btn" onclick="displayIndicator(indicatorMsg)">
+                </form>
+                <!-- <button class="btns main-remainder-btn">
+                    set remainder
+                </button> -->
+            </div>
+        </div>
+</section>
+
+
+<section class="coming-soon movie-section">
+    <div class="section-header">
+        <h2> coming soon</h2>
+    </div>
+    <div class="lines"> </div>
+
+    <div class="movie-box-container">
+        <div class="theboxes">
+            <img src="./Images/PopCorn.jpg" class="box-img">
+            <p class="movie-title"> Venom</p>
+            <h3 class="movie-category"> Action </h3>
+            <span class="split"> | </span>
+            <span class="movie-time"> 125 min</span>
+
+        </div>
+        <div class="theboxes">
+            <img src="./Images/PopCorn.jpg" class="box-img">
+            <p class="movie-title"> Venom</p>
+            <h3 class="movie-category"> Action </h3>
+            <span class="split"> | </span>
+            <span class="movie-time"> 125 min</span>
+
+        </div>
+        <div class="theboxes">
+            <img src="./Images/PopCorn.jpg" class="box-img">
+            <p class="movie-title"> Venom</p>
+            <h3 class="movie-category"> Action </h3>
+            <span class="split"> | </span>
+            <span class="movie-time"> 125 min</span>
+
+        </div>
+        <div class="theboxes">
+            <img src="./Images/PopCorn.jpg" class="box-img">
+            <p class="movie-title"> Venom</p>
+            <h3 class="movie-category"> Action </h3>
+            <span class="split"> | </span>
+            <span class="movie-time"> 125 min</span>
+
+        </div>
+        <div class="theboxes">
+            <img src="./Images/PopCorn.jpg" class="box-img">
+            <p class="movie-title"> Venom</p>
+            <h3 class="movie-category"> Action </h3>
+            <span class="split"> | </span>
+            <span class="movie-time"> 125 min</span>
+
+        </div>
+    </div>
+
+</section>
+
+<article class="news-line"> 
+    <h4>
+        news
+    </h4>
+    <div class="newsbox-container">
+        <div class="newsboxesCont">
+            <img src="./Images/PopCorn.jpg" class="newsbox-img">
+            <p class="news">
+                We are waiting fro your reviews for new films
+            </p>
+        </div>
+        <div class="newsboxesCont">
+            <img src="./Images/PopCorn.jpg" class="newsbox-img">
+            <p class="news">
+                We are waiting fro your reviews for new films
+            </p>
+        </div>
+        <div class="newsboxesCont">
+            <img src="./Images/PopCorn.jpg" class="newsbox-img">
+            <p class="news">
+                We are waiting fro your reviews for new films
+            </p>
+        </div>
+        <div class="newsboxesCont">
+            <img src="./Images/PopCorn.jpg" class="newsbox-img">
+            <p class="news">
+                We are waiting fro your reviews for new films
+            </p>
+        </div>
+        <div class="newsboxesCont">
+            <img src="./Images/PopCorn.jpg" class="newsbox-img">
+            <p class="news">
+                We are waiting fro your reviews for new films
+            </p>
+        </div>
+        <div class="newsboxesCont">
+            <img src="./Images/PopCorn.jpg" class="newsbox-img">
+            <p class="news">
+                We are waiting fro your reviews for new films
+            </p>
+        </div>
+        <div class="newsboxesCont">
+            <img src="./Images/PopCorn.jpg" class="newsbox-img">
+            <p class="news">
+                We are waiting fro your reviews for new films
+            </p>
+        </div>
+    </div>
+   
+    <div class="newsline-direction">
+        <img src="./icons/arrow-left-solid.svg" class="newsline-left socials">
+        <div class="newsline-indicator">
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+        <img src="./icons/arrow-right-solid.svg" class="newsline-right socials">
+    </div>
+</article>
+
+<footer>
+    <div class="footer-top">
+        <div class="logo-container">
+            <h1>
+                Lazy <span> house </span>
+            </h1>
+        </div>
+        <div class="footer-header-socials header-socials">
+            <img src="./icons/facebook.svg" class="socials">
+            <img src="./icons/twitter.svg" class="socials">
+            <img src="./icons/instagram.svg" class="socials">
+        </div>
+    </div>
+
+    <div class="footer-info">
+        <p class="e-mail">
+            Info@Lazyhouse.com
+            <span class="phone-num">
+                +(234) 8051718562
+            </span>
+        </p>
+        
+        <p class="rights">
+            Lazy House all Rights Reserved
+        </p>
+
+    </div>
+</footer>
+
+<section class="indicator-section">
+   
+</section>
+
+<div class="cart">
+    <img src="./icons/cart-plus-solid.svg" class="socials cart-icon">
+    <span class="booked-movies-count"> 0 </span>
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>
