@@ -965,9 +965,6 @@ footer{
     }
     .newsbox-container{
         margin-top: 7vh;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
     }
     .newsboxesCont{
         width: 100%;
@@ -980,10 +977,6 @@ footer{
         color: var(--mainColor);
         font-size: .8rem;
         margin: 1rem 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
         color: var(--mainColor);
         text-align: center;
         width: 90%

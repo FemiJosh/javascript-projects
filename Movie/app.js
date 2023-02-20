@@ -166,10 +166,17 @@ let isAlarmSet = false;
 
 
                 //DISPLAY SEARCHED MOVIES START
-                fetch('https://imdb8.p.rapidapi.com/auto-complete?q=friend')
-                    .then(response => response.json())
-                    .then(response => console.log(response))
-                    .catch(err => console.error(err));
+                fetch('https://crypto-news16.p.rapidapi.com/news/top/5', options)
+                .then(response => response.json())
+                .then(response => {
+                   work(response)
+                })
+
+                function work(draw){
+                    draw.map(eachMap =>{
+                        console.log(eachMap.title)
+                    })
+                }
                 //DISPLAY SEARCHED MOVIES ENDS
 
 
